@@ -7,6 +7,7 @@ public class CubesBehaviour : MonoBehaviour
 
     GameObject m_gameObject;
     GameObject m_Right_Hand;
+    gameManager GM;
 
     public enum Direction
     {
@@ -26,14 +27,15 @@ public class CubesBehaviour : MonoBehaviour
     public float Speed;
     public CubeType type;
     public Direction direction;
-   
+    public Vector3 spawnPos;
+
     void Start()
     {
         
     }
-    public void Setup(GameObject ownGameObject)
+    public void Setup(gameManager gm)
     {
-        
+        GM = gm;
     }
     // Update is called once per frame
     void Update()
@@ -44,7 +46,8 @@ public class CubesBehaviour : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(new Vector3(0, 0, -Speed));
+        //transform.Translate(new Vector3(0, 0, -Speed));
+        transform.position = Vector3.Lerp(transform.position, spawnPos * GM.endPosMultiplier, Time.deltaTime);
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * GM.endScaleMultiplier, Time.deltaTime);
     }
-
 }

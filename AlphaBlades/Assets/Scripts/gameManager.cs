@@ -24,6 +24,8 @@ public class gameManager : MonoBehaviour
     public int MaxCubesPassed = 3;
     public int CurrentCubesPassed = 0;
     public int HighScore = 0;
+    public float endPosMultiplier = 3.0f;
+    public float endScaleMultiplier = 4.0f;
 
     private bool stopCreating = false;
 
@@ -177,13 +179,14 @@ public class gameManager : MonoBehaviour
         ChangeDirection(direct, CubeTrans);
         cubeBeh.direction = direct;
         cubeBeh.ID = rand;
+        cubeBeh.spawnPos = Area;
 
         if (type == 1)
             cubeBeh.type = CubesBehaviour.CubeType.Red;
         else
             cubeBeh.type = CubesBehaviour.CubeType.Blue;
 
-        cubeBeh.Setup(CubeTrans);
+        cubeBeh.Setup(this);
         return cubeBeh;
     }
 

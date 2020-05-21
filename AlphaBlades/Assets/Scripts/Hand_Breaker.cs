@@ -8,14 +8,16 @@ public class Hand_Breaker : MonoBehaviour
     gameManager GM;
     AudioSource boxHit;
     AudioSource bladeHit;
+    AudioSource bladeWrongHit;
 
     // Start is called before the first frame update
     void Start()
     {
         GM = GameObject.Find("gameManager").GetComponent<gameManager>();
         boxHit = GameObject.Find("BoxHitSound").GetComponent<AudioSource>();
+        bladeWrongHit = GameObject.Find("WrongHit").GetComponent<AudioSource>();
 
-        if(Type == CubesBehaviour.CubeType.Red)
+        if (Type == CubesBehaviour.CubeType.Red)
             bladeHit = GameObject.Find("RedBladeHit").GetComponent<AudioSource>();
         else
             bladeHit = GameObject.Find("BlueBladeHit").GetComponent<AudioSource>();
@@ -52,6 +54,8 @@ public class Hand_Breaker : MonoBehaviour
             GM.DestroyCube(Parent);
             GM.AddPunctuation();
         }
+        else
+            bladeWrongHit.PlayOneShot(bladeWrongHit.clip);
         //}
     }
 }
