@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="CARD6" size="0.092000 0.066151" />
+    <ImageTarget name="CARD5" size="0.092000 0.065629" />
+    <ImageTarget name="CARD2" size="0.062200 0.086769" />
+    <ImageTarget name="CARDPICTURE" size="0.062000 0.086177" />
     <ImageTarget name="Vuforia_detection8bits2" size="0.100000 0.100000" />
     <ImageTarget name="Vuforia_detection8bits" size="0.100000 0.100000" />
   </Tracking>

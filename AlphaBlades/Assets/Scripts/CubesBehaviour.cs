@@ -47,7 +47,7 @@ public class CubesBehaviour : MonoBehaviour
     void Move()
     {
         //transform.Translate(new Vector3(0, 0, -Speed));
-        transform.position = Vector3.Lerp(transform.position, spawnPos * GM.endPosMultiplier, Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, spawnPos * GM.endPosMultiplier, Time.deltaTime*Speed*6.0f);
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * GM.endScaleMultiplier, Time.deltaTime);
     }
 }
