@@ -154,6 +154,9 @@ public class gameManager : MonoBehaviour
                 ChangeToEndScreen();
             }
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+            Application.Quit();
     }
 
     // Score
